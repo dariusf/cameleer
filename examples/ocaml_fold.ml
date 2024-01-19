@@ -28,3 +28,45 @@ let rec fold_left (v : 'a list) ((inv : 'b -> 'a seq -> bool) [@ghost])
                  inv (f acc x) (snoc v x)
       variant  param
       ensures  permitted vres l0 && vres == v ++ param && inv r vres *)
+
+(*@ function sum_of_list (l: int list): int =
+      match l with
+      | [] -> 0
+      | x :: r -> x + sum_of_list r *)
+
+let rec summ (xs : int list) : int =
+match xs with
+  | [] -> 0
+  | x :: l -> x + summ l
+  (*@ res = summ xs
+      ensures res = sum_of_list xs
+      diverges
+  *)
+
+
+
+
+(*@ lemma sum_cons: forall x:int, xs: int list.
+      SeqSum.sum (cons x xs) = x + SeqSum.sum xs
+*)
+
+(*@ lemma seq_list_sum: forall xs: int list.
+      SeqSum.sum (seq_of_list xs) = sum_of_list xs
+*)
+
+let test_sum (xs:int list) : int =
+      fst (fold_left [] (fun e p -> e = SeqSum.sum p) xs (fun t c -> c + t) 0 xs)
+(*@ r = test xs
+      ensures r = sum_of_list xs
+*)
+
+
+(*@ lemma seq_list_length: forall xs: int list.
+      length (seq_of_list xs) = List.length xs
+*)
+
+let test_length (xs:int list) : int =
+      fst (fold_left [] (fun e p -> e = length p) xs (fun t _ -> 1 + t) 0 xs)
+(*@ r = test xs
+      ensures r = List.length xs
+*)

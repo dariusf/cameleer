@@ -72,6 +72,8 @@ module Stdlib
     ensures { result = to_int s }
 
   use import seq.Seq as Seq
+  use import seq.Sum as SeqSum
+  use import list.NthNoOpt as Nth
 
   scope import Array
 
@@ -670,6 +672,7 @@ end
 module Seq
 
   use export seq.Seq
+  use export seq.Sum
   use export seq.Mem
 
 end

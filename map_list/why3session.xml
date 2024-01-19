@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"http://why3.lri.fr/why3session.dtd">
+<why3session shape_version="6">
+<prover id="0" name="Alt-Ergo" version="2.4.3" timelimit="5" steplimit="0" memlimit="1000"/>
+<file format="ocaml" proved="true">
+<path name=".."/><path name="map_list.ml"/>
+<theory name="Map_list" proved="true">
+ <goal name="map&#39;vc" expl="VC for map" proved="true">
+ <transf name="split_vc" proved="true" >
+  <goal name="map&#39;vc.0" expl="variant decrease" proved="true">
+  <proof prover="0"><result status="valid" time="0.032841" steps="84"/></proof>
+  </goal>
+  <goal name="map&#39;vc.1" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" time="0.034559" steps="206"/></proof>
+  </goal>
+  <goal name="map&#39;vc.2" expl="postcondition" proved="true">
+  <transf name="split_vc" proved="true" >
+   <goal name="map&#39;vc.2.0" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.023555" steps="33"/></proof>
+   </goal>
+   <goal name="map&#39;vc.2.1" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.026899" steps="40"/></proof>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="map&#39;vc.3" expl="postcondition" proved="true">
+  <transf name="split_vc" proved="true" >
+   <goal name="map&#39;vc.3.0" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.024100" steps="38"/></proof>
+   </goal>
+   <goal name="map&#39;vc.3.1" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.028387" steps="108"/></proof>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="id&#39;vc" expl="VC for id" proved="true">
+ <proof prover="0"><result status="valid" time="0.019380" steps="12"/></proof>
+ </goal>
+ <goal name="index_shift" proved="true">
+ <proof prover="0"><result status="valid" time="0.023398" steps="19"/></proof>
+ </goal>
+ <goal name="length_smaller" proved="true">
+ <transf name="induction_ty_lex" proved="true" >
+  <goal name="length_smaller.0" proved="true">
+  <transf name="split_vc" proved="true" >
+   <goal name="length_smaller.0.0" proved="true">
+   <proof prover="0"><result status="valid" time="0.023627" steps="28"/></proof>
+   </goal>
+   <goal name="length_smaller.0.1" proved="true">
+   <transf name="instantiate" proved="true" arg1="index_shift" arg2="x,xs">
+    <goal name="length_smaller.0.1.0" proved="true">
+    <proof prover="0"><result status="valid" time="0.032151" steps="193"/></proof>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="nth_agree" proved="true">
+ <transf name="intros" proved="true" arg1="xs">
+  <goal name="nth_agree.0" proved="true">
+  <transf name="induction_arg_ty_lex" proved="true" arg1="xs">
+   <goal name="nth_agree.0.0" proved="true">
+   <transf name="split_vc" proved="true" >
+    <goal name="nth_agree.0.0.0" proved="true">
+    <proof prover="0"><result status="valid" time="0.022830" steps="22"/></proof>
+    </goal>
+    <goal name="nth_agree.0.0.1" proved="true">
+    <transf name="destruct_term" proved="true" arg1="ys">
+     <goal name="nth_agree.0.0.1.0" proved="true">
+     <transf name="assert" proved="true" arg1="(x1 = x3)">
+      <goal name="nth_agree.0.0.1.0.0" expl="asserted formula" proved="true">
+      <proof prover="0"><result status="valid" time="0.026439" steps="85"/></proof>
+      </goal>
+      <goal name="nth_agree.0.0.1.0.1" proved="true">
+      <proof prover="0"><result status="valid" time="0.047113" steps="377"/></proof>
+      </goal>
+     </transf>
+     </goal>
+     <goal name="nth_agree.0.0.1.1" proved="true">
+     <proof prover="0"><result status="valid" time="0.024055" steps="31"/></proof>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="map_id&#39;vc" expl="VC for map_id" proved="true">
+ <transf name="induction_ty_lex" proved="true" >
+  <goal name="map_id&#39;vc.0" expl="VC for map_id" proved="true">
+  <transf name="split_vc" proved="true" >
+   <goal name="map_id&#39;vc.0.0" expl="precondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.022769" steps="22"/></proof>
+   </goal>
+   <goal name="map_id&#39;vc.0.1" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.024695" steps="27"/></proof>
+   </goal>
+   <goal name="map_id&#39;vc.0.2" expl="precondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.023776" steps="19"/></proof>
+   </goal>
+   <goal name="map_id&#39;vc.0.3" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.022593" steps="188"/></proof>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+</file>
+</why3session>
