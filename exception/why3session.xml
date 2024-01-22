@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"http://why3.lri.fr/why3session.dtd">
+<why3session shape_version="6">
+<prover id="0" name="Z3" version="4.12.2" timelimit="5" steplimit="0" memlimit="1000"/>
+<prover id="1" name="Alt-Ergo" version="2.4.3" timelimit="5" steplimit="0" memlimit="1000"/>
+<file format="ocaml" proved="true">
+<path name=".."/><path name="exception.ml"/>
+<theory name="Exception" proved="true">
+ <goal name="failing&#39;vc" expl="VC for failing" proved="true">
+ <transf name="split_vc" proved="true" >
+  <goal name="failing&#39;vc.0" expl="exceptional postcondition" proved="true">
+  <proof prover="1"><result status="valid" time="0.025713" steps="18"/></proof>
+  </goal>
+  <goal name="failing&#39;vc.1" expl="postcondition" proved="true">
+  <proof prover="1"><result status="valid" time="0.022219" steps="18"/></proof>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="test1&#39;vc" expl="VC for test1" proved="true">
+ <transf name="split_vc" proved="true" >
+  <goal name="test1&#39;vc.0" expl="precondition" proved="true">
+  <proof prover="1"><result status="valid" time="0.020913" steps="12"/></proof>
+  </goal>
+  <goal name="test1&#39;vc.1" expl="postcondition" proved="true">
+  <proof prover="1"><result status="valid" time="0.022913" steps="14"/></proof>
+  </goal>
+  <goal name="test1&#39;vc.2" expl="postcondition" proved="true">
+  <proof prover="0"><result status="valid" time="0.026681" steps="13461"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+</file>
+</why3session>
