@@ -1,8 +1,8 @@
 
-(*@ function length (xs:'a list) : int =
+let[@logic] rec length (xs:'a list) : int =
   match xs with
   | [] -> 0
-  | _ :: xs1 -> 1 + length xs1 *)
+  | _ :: xs1 -> 1 + length xs1
 
 (*@ lemma length_positive_l: forall xs:'a list. length xs >=0 *)
 
