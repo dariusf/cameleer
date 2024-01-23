@@ -28,28 +28,25 @@
  <goal name="map&#39;vc" expl="VC for map" proved="true">
  <transf name="split_vc" proved="true" >
   <goal name="map&#39;vc.0" expl="variant decrease" proved="true">
-  <proof prover="0"><result status="valid" time="0.030227" steps="117"/></proof>
+  <proof prover="0"><result status="valid" time="0.030227" steps="74"/></proof>
   </goal>
-  <goal name="map&#39;vc.1" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" time="0.044336" steps="267"/></proof>
+  <goal name="map&#39;vc.1" expl="postcondition" proved="true">
+  <transf name="split_vc" proved="true" >
+   <goal name="map&#39;vc.1.0" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.029668" steps="76"/></proof>
+   </goal>
+   <goal name="map&#39;vc.1.1" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.028808" steps="90"/></proof>
+   </goal>
+  </transf>
   </goal>
   <goal name="map&#39;vc.2" expl="postcondition" proved="true">
   <transf name="split_vc" proved="true" >
    <goal name="map&#39;vc.2.0" expl="postcondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.028808" steps="114"/></proof>
+   <proof prover="0"><result status="valid" time="0.047295" steps="88"/></proof>
    </goal>
    <goal name="map&#39;vc.2.1" expl="postcondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.029668" steps="114"/></proof>
-   </goal>
-  </transf>
-  </goal>
-  <goal name="map&#39;vc.3" expl="postcondition" proved="true">
-  <transf name="split_vc" proved="true" >
-   <goal name="map&#39;vc.3.0" expl="postcondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.030480" steps="129"/></proof>
-   </goal>
-   <goal name="map&#39;vc.3.1" expl="postcondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.047295" steps="242"/></proof>
+   <proof prover="0"><result status="valid" time="0.030480" steps="194"/></proof>
    </goal>
   </transf>
   </goal>
@@ -115,21 +112,15 @@
  <transf name="induction_ty_lex" proved="true" >
   <goal name="map_id&#39;vc.0" expl="VC for map_id" proved="true">
   <transf name="split_vc" proved="true" >
-   <goal name="map_id&#39;vc.0.0" expl="precondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.027192" steps="94"/></proof>
+   <goal name="map_id&#39;vc.0.0" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.024569" steps="99"/></proof>
    </goal>
    <goal name="map_id&#39;vc.0.1" expl="postcondition" proved="true">
    <transf name="split_vc" proved="true" >
     <goal name="map_id&#39;vc.0.1.0" expl="postcondition" proved="true">
-    <proof prover="0"><result status="valid" time="0.040598" steps="99"/></proof>
+    <proof prover="0"><result status="valid" time="0.040598" steps="221"/></proof>
     </goal>
    </transf>
-   </goal>
-   <goal name="map_id&#39;vc.0.2" expl="precondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.030926" steps="111"/></proof>
-   </goal>
-   <goal name="map_id&#39;vc.0.3" expl="postcondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.024569" steps="222"/></proof>
    </goal>
   </transf>
   </goal>
@@ -145,74 +136,26 @@
  <proof prover="2"><result status="valid" time="0.151603" steps="41813"/></proof>
  </goal>
  <goal name="map_succ&#39;vc" expl="VC for map_succ" proved="true">
- <proof prover="0"><result status="valid" time="0.050902" steps="305"/></proof>
+ <proof prover="0"><result status="valid" time="0.050902" steps="62"/></proof>
  </goal>
  <goal name="map_succ1&#39;vc" expl="VC for map_succ1" proved="true">
  <transf name="induction_ty_lex" proved="true" >
   <goal name="map_succ1&#39;vc.0" expl="VC for map_succ1" proved="true">
   <transf name="split_vc" proved="true" >
-   <goal name="map_succ1&#39;vc.0.0" expl="precondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.034119" steps="94"/></proof>
+   <goal name="map_succ1&#39;vc.0.0" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.032657" steps="116"/></proof>
    </goal>
    <goal name="map_succ1&#39;vc.0.1" expl="postcondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.035843" steps="116"/></proof>
-   </goal>
-   <goal name="map_succ1&#39;vc.0.2" expl="precondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.043018" steps="153"/></proof>
-   </goal>
-   <goal name="map_succ1&#39;vc.0.3" expl="postcondition" proved="true">
-   <transf name="destruct_term" proved="true" arg1="o1">
-    <goal name="map_succ1&#39;vc.0.3.0" expl="postcondition" proved="true">
-    <transf name="assert" proved="true" arg1="(x1 = x3 + 1)">
-     <goal name="map_succ1&#39;vc.0.3.0.0" expl="asserted formula" proved="true">
-     <proof prover="0"><result status="valid" time="0.148956" steps="1088"/></proof>
-     </goal>
-     <goal name="map_succ1&#39;vc.0.3.0.1" expl="postcondition" proved="true">
-     <transf name="compute_hyp_specified" proved="true" arg1="in" arg2="H">
-      <goal name="map_succ1&#39;vc.0.3.0.1.0" expl="postcondition" proved="true">
-      <transf name="instantiate" proved="true" arg1="H2" arg2="x">
-       <goal name="map_succ1&#39;vc.0.3.0.1.0.0" expl="postcondition" proved="true">
-       <transf name="compute_hyp_specified" proved="true" arg1="in" arg2="Hinst">
-        <goal name="map_succ1&#39;vc.0.3.0.1.0.0.0" expl="postcondition" proved="true">
-        <transf name="assert" proved="true" arg1="(length1 x = length1 x2)">
-         <goal name="map_succ1&#39;vc.0.3.0.1.0.0.0.0" expl="asserted formula" proved="true">
-         <proof prover="0"><result status="valid" time="0.047509" steps="214"/></proof>
-         </goal>
-         <goal name="map_succ1&#39;vc.0.3.0.1.0.0.0.1" expl="postcondition" proved="true">
-         <transf name="assert" proved="true" arg1="(forall i:int. 0 &lt;= i /\ i &lt; length1 (seq_of_list x) -&gt; (seq_of_list x)[i]&#39; = ((seq_of_list x2)[i]&#39; + 1))">
-          <goal name="map_succ1&#39;vc.0.3.0.1.0.0.0.1.0" expl="asserted formula" proved="true">
-          <transf name="split_vc" proved="true" >
-           <goal name="map_succ1&#39;vc.0.3.0.1.0.0.0.1.0.0" expl="asserted formula" proved="true">
-           <transf name="instantiate" proved="true" arg1="index_shift_p1" arg2="x1,x">
-            <goal name="map_succ1&#39;vc.0.3.0.1.0.0.0.1.0.0.0" expl="asserted formula" proved="true">
-            <proof prover="0"><result status="valid" time="0.113922" steps="714"/></proof>
-            </goal>
-           </transf>
-           </goal>
-          </transf>
-          </goal>
-          <goal name="map_succ1&#39;vc.0.3.0.1.0.0.0.1.1" expl="postcondition" proved="true">
-          <proof prover="0"><result status="valid" time="0.045856" steps="243"/></proof>
-          </goal>
-         </transf>
-         </goal>
-        </transf>
-        </goal>
-       </transf>
-       </goal>
-      </transf>
-      </goal>
-     </transf>
-     </goal>
-    </transf>
+   <transf name="destruct_term" proved="true" arg1="r">
+    <goal name="map_succ1&#39;vc.0.1.0" expl="postcondition" proved="true">
     <transf name="instantiate" proved="true" arg1="index_shift_p1" arg2="x1,x">
-     <goal name="map_succ1&#39;vc.0.3.0.0" expl="postcondition" proved="true">
-     <proof prover="0"><result status="valid" time="0.697186" steps="11241"/></proof>
+     <goal name="map_succ1&#39;vc.0.1.0.0" expl="postcondition" proved="true">
+     <proof prover="0"><result status="valid" time="0.286268" steps="2954"/></proof>
      </goal>
     </transf>
     </goal>
-    <goal name="map_succ1&#39;vc.0.3.1" expl="postcondition" proved="true">
-    <proof prover="0"><result status="valid" time="0.029124" steps="93"/></proof>
+    <goal name="map_succ1&#39;vc.0.1.1" expl="postcondition" proved="true">
+    <proof prover="0"><result status="valid" time="0.031279" steps="141"/></proof>
     </goal>
    </transf>
    </goal>

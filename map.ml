@@ -9,21 +9,11 @@
 (*@ lemma seq_of_list_append: forall l1 l2: 'a list.
       seq_of_list (List.append l1 l2) == seq_of_list l1 ++ seq_of_list l2 *)
 
-(*@ predicate permitted (v: 'a seq) (s: 'a seq) =
-      length v <= length s &&
-      forall i. 0 <= i < length v -> v[i] = s[i] *)
-
-(*@ predicate complete (l: 'a seq) (v: 'a seq) =
-      length v = length l *)
-
-let rec map (pf : 'a list [@ghost]) (all : 'a list [@ghost]) (f:'a -> 'b) (xs:'a list) =
+let rec map (f:'a -> 'b) (xs:'a list) =
   match xs with
-  | [] -> ([], pf)
-  | x :: xs1 ->
-    let a, b = map (pf @ [x]) all f xs1 in
-    f x :: a, b
-(*@ ys, trv = map pf all f xs
-      requires all == pf ++ xs
+  | [] -> []
+  | x :: xs1 -> f x :: map f xs1
+(*@ ys = map f xs
       variant xs
       ensures length ys = length xs
       ensures forall i. 0 <= i < length ys -> ys[i] = f (xs[i])
@@ -54,7 +44,7 @@ let id y = y
       l1 = l2
     *)
 
-let map_id ys = fst (map [] ys id ys)
+let map_id ys = map id ys
 (*@ r = map_id ys
     ensures r = ys
 *)
@@ -73,7 +63,7 @@ let map_id ys = fst (map [] ys id ys)
     (forall i: int. 0 <= i /\ i < length xs -> 1 + (seq_of_list xs)[i] = 1 + (seq_of_list ys)[i])
 *)
 
-let map_succ ys = fst (map [] ys (fun x -> x + 1) ys)
+let map_succ ys = map (fun x -> x + 1) ys
 (*@ r = map_succ ys
     ensures forall i:int. 0<=i /\ i<length ys -> r[i] = ys[i] + 1
 *)
@@ -84,7 +74,7 @@ let map_succ ys = fst (map [] ys (fun x -> x + 1) ys)
   | x::xs1 -> (x+1) :: succ_list xs1
  *)
 
-let map_succ1 ys = fst (map [] ys (fun x -> x + 1) ys)
+let map_succ1 ys = map (fun x -> x + 1) ys
 (*@ r = map_succ1 ys
     ensures r = succ_list ys
 *)
