@@ -70,3 +70,27 @@ let test_length (xs:int list) : int =
 (*@ r = test xs
       ensures r = List.length xs
 *)
+
+let rec foldr ((inv : 'b -> 'a seq -> bool) [@ghost])
+      (f : 'a -> 'b -> 'b) (xs : 'a list) (acc : 'b)
+= match xs with
+  | [] -> acc
+  | x :: t -> f x (foldr inv f t acc)
+(*@ r = foldr inv f xs acc
+      requires inv acc []
+      requires forall acc x ys.
+                 inv acc ys -> inv (f x acc) (cons x ys)
+      variant  xs
+      ensures  inv r xs *)
+
+let test_length_foldr (xs:int list) : int =
+      foldr (fun e p -> e = length p) (fun _ t -> 1 + t) xs 0
+(*@ r = test xs
+      ensures r = List.length xs
+*)
+
+let test_sum_foldr (xs:int list) : int =
+      foldr (fun e p -> e = SeqSum.sum p) (fun c t -> c + t) xs 0
+(*@ r = test xs
+      ensures r = sum_of_list xs
+*)
