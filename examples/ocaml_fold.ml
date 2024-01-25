@@ -54,7 +54,7 @@ match xs with
       SeqSum.sum (seq_of_list xs) = sum_of_list xs
 *)
 
-let test_sum (xs:int list) : int =
+let foldl_sum (xs:int list) : int =
       fst (fold_left [] (fun e p -> e = SeqSum.sum p) xs (fun t c -> c + t) 0 xs)
 (*@ r = test xs
       ensures r = sum_of_list xs
@@ -65,7 +65,7 @@ let test_sum (xs:int list) : int =
       length (seq_of_list xs) = List.length xs
 *)
 
-let test_length (xs:int list) : int =
+let foldl_length (xs:int list) : int =
       fst (fold_left [] (fun e p -> e = length p) xs (fun t _ -> 1 + t) 0 xs)
 (*@ r = test xs
       ensures r = List.length xs
@@ -83,13 +83,13 @@ let rec foldr ((inv : 'b -> 'a seq -> bool) [@ghost])
       variant  xs
       ensures  inv r xs *)
 
-let test_length_foldr (xs:int list) : int =
+let foldr_length (xs:int list) : int =
       foldr (fun e p -> e = length p) (fun _ t -> 1 + t) xs 0
 (*@ r = test xs
       ensures r = List.length xs
 *)
 
-let test_sum_foldr (xs:int list) : int =
+let foldr_sum (xs:int list) : int =
       foldr (fun e p -> e = SeqSum.sum p) (fun c t -> c + t) xs 0
 (*@ r = test xs
       ensures r = sum_of_list xs

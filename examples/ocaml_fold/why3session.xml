@@ -132,7 +132,7 @@
   </goal>
  </transf>
  </goal>
- <goal name="test_sum&#39;vc" expl="VC for test_sum" proved="true">
+ <goal name="foldl_sum&#39;vc" expl="VC for foldl_sum" proved="true">
  <proof prover="1"><result status="valid" time="0.052699" steps="458"/></proof>
  </goal>
  <goal name="seq_list_length" proved="true">
@@ -149,7 +149,7 @@
   </goal>
  </transf>
  </goal>
- <goal name="test_length&#39;vc" expl="VC for test_length" proved="true">
+ <goal name="foldl_length&#39;vc" expl="VC for foldl_length" proved="true">
  <proof prover="1"><result status="valid" time="0.046672" steps="380"/></proof>
  </goal>
  <goal name="foldr&#39;vc" expl="VC for foldr" proved="true">
@@ -175,40 +175,40 @@
   </goal>
  </transf>
  </goal>
- <goal name="test_length_foldr&#39;vc" expl="VC for test_length_foldr" proved="true">
+ <goal name="foldr_length&#39;vc" expl="VC for foldr_length" proved="true">
  <proof prover="1"><result status="valid" time="0.043536" steps="233"/></proof>
  </goal>
- <goal name="test_sum_foldr&#39;vc" expl="VC for test_sum_foldr" proved="true">
+ <goal name="foldr_sum&#39;vc" expl="VC for foldr_sum" proved="true">
  <transf name="induction_ty_lex" proved="true" >
-  <goal name="test_sum_foldr&#39;vc.0" expl="VC for test_sum_foldr" proved="true">
+  <goal name="foldr_sum&#39;vc.0" expl="VC for foldr_sum" proved="true">
   <transf name="split_vc" proved="true" >
-   <goal name="test_sum_foldr&#39;vc.0.0" expl="precondition" proved="true">
+   <goal name="foldr_sum&#39;vc.0.0" expl="precondition" proved="true">
    <proof prover="1"><result status="valid" time="0.034418" steps="62"/></proof>
    </goal>
-   <goal name="test_sum_foldr&#39;vc.0.1" expl="precondition" proved="true">
+   <goal name="foldr_sum&#39;vc.0.1" expl="precondition" proved="true">
    <transf name="compute_specified" proved="true" >
-    <goal name="test_sum_foldr&#39;vc.0.1.0" expl="precondition" proved="true">
+    <goal name="foldr_sum&#39;vc.0.1.0" expl="precondition" proved="true">
     <transf name="assert" proved="true" arg1="(x + acc = sum (cons x ys))">
-     <goal name="test_sum_foldr&#39;vc.0.1.0.0" expl="asserted formula" proved="true">
+     <goal name="foldr_sum&#39;vc.0.1.0.0" expl="asserted formula" proved="true">
      <proof prover="1"><result status="valid" time="1.986303" steps="9172"/></proof>
      </goal>
-     <goal name="test_sum_foldr&#39;vc.0.1.0.1" expl="precondition" proved="true">
+     <goal name="foldr_sum&#39;vc.0.1.0.1" expl="precondition" proved="true">
      <proof prover="1"><result status="valid" time="0.023779" steps="33"/></proof>
      </goal>
     </transf>
     </goal>
    </transf>
    </goal>
-   <goal name="test_sum_foldr&#39;vc.0.2" expl="postcondition" proved="true">
+   <goal name="foldr_sum&#39;vc.0.2" expl="postcondition" proved="true">
    <proof prover="1"><result status="valid" time="0.026329" steps="36"/></proof>
    </goal>
-   <goal name="test_sum_foldr&#39;vc.0.3" expl="precondition" proved="true">
+   <goal name="foldr_sum&#39;vc.0.3" expl="precondition" proved="true">
    <proof prover="1"><result status="valid" time="0.033230" steps="89"/></proof>
    </goal>
-   <goal name="test_sum_foldr&#39;vc.0.4" expl="precondition" proved="true">
+   <goal name="foldr_sum&#39;vc.0.4" expl="precondition" proved="true">
    <proof prover="1"><result status="valid" time="0.069973" steps="666"/></proof>
    </goal>
-   <goal name="test_sum_foldr&#39;vc.0.5" expl="postcondition" proved="true">
+   <goal name="foldr_sum&#39;vc.0.5" expl="postcondition" proved="true">
    <proof prover="1"><result status="valid" time="0.027217" steps="38"/></proof>
    </goal>
   </transf>

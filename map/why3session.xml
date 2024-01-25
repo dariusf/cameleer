@@ -163,6 +163,9 @@
   </goal>
  </transf>
  </goal>
+ <goal name="map_thrice&#39;vc" expl="VC for map_thrice" proved="true">
+ <proof prover="0"><result status="valid" time="0.031055" steps="30"/></proof>
+ </goal>
 </theory>
 </file>
 </why3session>

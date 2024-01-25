@@ -79,3 +79,8 @@ let map_succ1 ys = map (fun x -> x + 1) ys
     ensures r = succ_list ys
 *)
 
+
+let map_thrice ys = map (fun x -> x * 3) ys
+(*@ r = map_thrice ys
+    ensures forall i:int. 0<=i /\ i<length ys -> r[i] = ys[i] * 3
+*)
