@@ -40,36 +40,27 @@ match xs with
   | x :: l -> x + summ l
   (*@ res = summ xs
       ensures res = sum_of_list xs
-      diverges
-  *)
-
-
-
+      diverges *)
 
 (*@ lemma sum_cons: forall x:int, xs: int list.
-      SeqSum.sum (cons x xs) = x + SeqSum.sum xs
-*)
+      SeqSum.sum (cons x xs) = x + SeqSum.sum xs *)
 
 (*@ lemma seq_list_sum: forall xs: int list.
-      SeqSum.sum (seq_of_list xs) = sum_of_list xs
-*)
+      SeqSum.sum (seq_of_list xs) = sum_of_list xs *)
 
 let foldl_sum (xs:int list) : int =
       fst (fold_left [] (fun e p -> e = SeqSum.sum p) xs (fun t c -> c + t) 0 xs)
 (*@ r = test xs
-      ensures r = sum_of_list xs
-*)
+      ensures r = sum_of_list xs *)
 
 
 (*@ lemma seq_list_length: forall xs: int list.
-      length (seq_of_list xs) = List.length xs
-*)
+      length (seq_of_list xs) = List.length xs *)
 
 let foldl_length (xs:int list) : int =
       fst (fold_left [] (fun e p -> e = length p) xs (fun t _ -> 1 + t) 0 xs)
 (*@ r = test xs
-      ensures r = List.length xs
-*)
+      ensures r = List.length xs *)
 
 let rec foldr ((inv : 'b -> 'a seq -> bool) [@ghost])
       (f : 'a -> 'b -> 'b) (xs : 'a list) (acc : 'b)
@@ -86,11 +77,9 @@ let rec foldr ((inv : 'b -> 'a seq -> bool) [@ghost])
 let foldr_length (xs:int list) : int =
       foldr (fun e p -> e = length p) (fun _ t -> 1 + t) xs 0
 (*@ r = test xs
-      ensures r = List.length xs
-*)
+     ensures r = List.length xs *)
 
 let foldr_sum (xs:int list) : int =
       foldr (fun e p -> e = SeqSum.sum p) (fun c t -> c + t) xs 0
 (*@ r = test xs
-      ensures r = sum_of_list xs
-*)
+      ensures r = sum_of_list xs *)

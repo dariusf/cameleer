@@ -13,8 +13,7 @@ let rec applyN
       requires n0 = n + i
       requires inv i x
       requires forall j:int, x:'a. inv j x -> inv (j+1) (f x)
-      ensures inv n0 r
-*)
+      ensures inv n0 r *)
 
 (*
 

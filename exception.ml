@@ -5,8 +5,7 @@ let failing (x:int ref) : int
 (*@ r = failing x
     requires !x > 0
     raises Not_found -> !x > old !x
-    ensures !x > old !x
-*)
+    ensures !x > old !x *)
 
 let test1 () : bool =
   let i = ref 2 in
@@ -19,5 +18,4 @@ let test1 () : bool =
   in
   not (!i = init)
 (*@ r = test1 ()
-      ensures r = true
-*)
+      ensures r = true *)
